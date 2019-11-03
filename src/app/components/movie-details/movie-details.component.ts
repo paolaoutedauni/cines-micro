@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { PeliculaService } from "src/app/services/pelicula.service";
 import { ActivatedRoute } from "@angular/router";
+import { Router } from "@angular/router";
+
 
 @Component({
   selector: "app-movie-details",
@@ -10,9 +12,13 @@ import { ActivatedRoute } from "@angular/router";
 export class MovieDetailsComponent implements OnInit {
   public movieId;
   movies: any[] = [];
+  movie: any = {Images: []};
+  disponible = true;
+  reservas: number;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private peliculaService: PeliculaService
   ) {}
 
@@ -26,6 +32,10 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   filtrarPeliculas() {
-    this.movies = this.movies.filter(movie => movie.Id === this.movieId);
+    this.movie = this.movies.filter(movie => movie.Id === this.movieId)[0];
+  }
+
+  reservar(){
+    this.router.navigate(["/reservar", this.movie.Id]);
   }
 }

@@ -14,6 +14,7 @@ import { MovieDetailsComponent } from "./components/movie-details/movie-details.
 import { HeaderComponent } from "./components/header/header.component";
 import { MaterialModule } from "./material.module";
 import { PeliculaService } from "./services/pelicula.service";
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AdminComponent } from "./components/admin/admin.component";
 import { environment } from "src/environments/environment";
 
@@ -26,6 +27,7 @@ import { environment } from "src/environments/environment";
     AdminComponent
   ],
   imports: [
+    CarouselModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
