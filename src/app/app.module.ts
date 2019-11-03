@@ -16,6 +16,7 @@ import { MaterialModule } from "./material.module";
 import { PeliculaService } from "./services/pelicula.service";
 import { AdminComponent } from "./components/admin/admin.component";
 import { environment } from "src/environments/environment";
+import { ResevarComponent } from "./components/resevar/resevar.component";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { environment } from "src/environments/environment";
     HomeComponent,
     HeaderComponent,
     MovieDetailsComponent,
-    AdminComponent
+    AdminComponent,
+    ResevarComponent
   ],
   imports: [
     BrowserModule,

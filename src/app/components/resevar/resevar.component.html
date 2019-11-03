@@ -1,0 +1,44 @@
+<div class="container">
+  <form [formGroup]="reservarForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <h1>Comprar Entradas</h1>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <mat-form-field class="input">
+          <input matInput placeholder="Email" formControlName="email" />
+        </mat-form-field>
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email is required</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <mat-form-field class="input">
+          <mat-select placeholder="Entradas" formControlName="entradas">
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+            <mat-option value="5">5</mat-option>
+            <mat-option value="6">6</mat-option>
+            <mat-option value="7">7</mat-option>
+            <mat-option value="8">8</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div *ngIf="submitted && f.entradas.errors" class="invalid-feedback">
+          <div *ngIf="f.entradas.errors.required">Email is required</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <button mat-raised-button color="primary">Reservar</button>
+      </div>
+    </div>
+  </form>
+</div>
