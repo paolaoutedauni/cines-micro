@@ -7,7 +7,6 @@ import { Router } from "@angular/router";
   styleUrls: ["./header.component.css"]
 })
 export class HeaderComponent implements OnInit {
-  movies: any[] = [];
   home: boolean;
   constructor() {
     this.home = window.location.pathname === "/home";

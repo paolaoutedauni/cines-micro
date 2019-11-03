@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { PeliculaService } from "src/app/services/pelicula.service";
 import { Router } from "@angular/router";
+import { Pelicula } from "../../models/pelicula";
 
 @Component({
   selector: "app-home",
@@ -8,10 +9,10 @@ import { Router } from "@angular/router";
   styleUrls: ["./home.component.css"]
 })
 export class HomeComponent implements OnInit {
-  movies: any[] = [];
-  moviesAvailables: any[] = [];
-  moviesComingSoon: any[] = [];
-  filteredMovies: any[] = [];
+  movies: Pelicula[] = [];
+  moviesAvailables: Pelicula[] = [];
+  moviesComingSoon: Pelicula[] = [];
+  filteredMovies: Pelicula[] = [];
 
   constructor(
     private peliculaService: PeliculaService,
@@ -19,23 +20,22 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.peliculaService.getMovies().subscribe((data: any[]) => {
+    this.peliculaService.getMovies().subscribe((data: Pelicula[]) => {
       this.movies = data;
       this.moviesAvailables = data;
       this.moviesComingSoon = data;
       this.availableMovies();
       this.comingSoonMovies();
-    
     });
   }
 
-  availableMovies(){
-    this.moviesAvailables = this.movies.filter((movie) => movie.Available);
+  availableMovies() {
+    this.moviesAvailables = this.movies.filter(movie => movie.Available);
     this.filteredMovies = this.moviesAvailables;
   }
 
-  comingSoonMovies(){
-    this.moviesComingSoon = this.movies.filter((movie) => movie.ComingSoon);
+  comingSoonMovies() {
+    this.moviesComingSoon = this.movies.filter(movie => movie.ComingSoon);
   }
 
   filtrarPeliculas(filtro) {

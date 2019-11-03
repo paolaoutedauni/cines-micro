@@ -1,13 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AngularFirestore } from "@angular/fire/firestore";
-
-export interface Orden {
-  id: number;
-  pelicula: string;
-  correo: string;
-  cantidad: number;
-  fecha: string;
-}
+import { Orden } from "../../models/orden";
 
 const ELEMENT_DATA: Orden[] = [];
 @Component({
@@ -27,9 +20,14 @@ export class AdminComponent implements OnInit {
       .subscribe(data => {
         const ordenes: Orden[] = [];
         data.docs.map(doc => {
-          const obj: any = { ...doc.data(), id: doc.id };
+          const obj: Orden = {
+            cantidad: doc.data().cantidad,
+            correo: doc.data().correo,
+            fecha: doc.data().fecha,
+            pelicula: doc.data().pelicula,
+            id: doc.id
+          };
           ordenes.push(obj);
-          console.log(obj);
         });
         this.dataSource = ordenes;
       });

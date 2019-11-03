@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { PeliculaService } from "src/app/services/pelicula.service";
 import { ActivatedRoute } from "@angular/router";
 import { Router } from "@angular/router";
-
+import { Pelicula } from "../../models/pelicula";
 
 @Component({
   selector: "app-movie-details",
@@ -11,8 +11,27 @@ import { Router } from "@angular/router";
 })
 export class MovieDetailsComponent implements OnInit {
   public movieId;
-  movies: any[] = [];
-  movie: any = {Images: []};
+  movies: Pelicula[] = [];
+  movie: Pelicula = {
+    Actors: "",
+    Available: true,
+    Awards: "",
+    ComingSoon: false,
+    Country: "",
+    Director: "",
+    Genre: [""],
+    Id: "",
+    Images: [],
+    Language: "",
+    Plot: "",
+    Poster: "",
+    Rated: "",
+    Released: "",
+    Runtime: "",
+    Title: "",
+    Writer: "",
+    Year: ""
+  };
   disponible = true;
   reservas: number;
 
@@ -25,7 +44,7 @@ export class MovieDetailsComponent implements OnInit {
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get("id");
     this.movieId = id;
-    this.peliculaService.getMovies().subscribe((data: any[]) => {
+    this.peliculaService.getMovies().subscribe((data: Pelicula[]) => {
       this.movies = data;
       this.filtrarPeliculas();
     });
@@ -35,7 +54,7 @@ export class MovieDetailsComponent implements OnInit {
     this.movie = this.movies.filter(movie => movie.Id === this.movieId)[0];
   }
 
-  reservar(){
+  reservar() {
     this.router.navigate(["/reservar", this.movie.Id]);
   }
 }
