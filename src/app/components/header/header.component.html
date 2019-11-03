@@ -1,0 +1,28 @@
+<div class="header">
+  <div class="container header-title">
+    <img src="./assets/images/muralla.jpg" width="438" height="203" />
+  </div>
+  <div class="movies_nav">
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div
+          class="collapse navbar-collapse navbar-right collapse-display"
+          id="bs-example-navbar-collapse-1"
+        >
+          <nav>
+            <ul class="nav navbar-nav nav-row">
+              <li [ngClass]="{ active: home }">
+                <a routerLink="/home" routerLinkActive="active">Cartelera</a>
+              </li>
+              <li [ngClass]="{ active: !home }">
+                <a routerLink="/admin" routerLinkActive="active"
+                  >Administrador</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>

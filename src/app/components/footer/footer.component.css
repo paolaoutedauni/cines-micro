@@ -1,0 +1,14 @@
+.footer{
+    background-color: black;
+    color: white;
+}
+
+.footer-container{
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.image{
+    width: 8%;
+    max-height: 100%;
+}

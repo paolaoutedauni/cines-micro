@@ -1,0 +1,23 @@
+.poster{
+    max-width: 100%;
+}
+
+h5{
+    color: orange;
+    font-weight: bold;
+}
+
+h1{
+    color: gray;
+    font-weight: bold;
+}
+
+.carta{
+    margin-top: 10px;
+}
+
+.imageCarousel{
+    display: block; 
+    width: 100%;
+    max-height: 410px;
+}

@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Search a movie"
+          (input)="filtrarPeliculas($event)"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-sm-12 " *ngFor="let movie of filteredMovies">
+      <mat-card (click)="goToDetails(movie)" class="movie-card card">
+        <mat-card-header>
+          <mat-card-title class="titulos">{{ movie.Title }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{ movie.Poster }}" alt="Photo of Movie" />
+        <mat-card-content>
+          <div class="row">
+            <div class="col-12">
+              <b>Géneros</b>
+            </div>
+            <div class="col-12" *ngFor="let genre of movie.Genre">
+              {{ genre }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <b>Idiomas</b>
+            </div>
+            <div class="col-12">
+              {{ movie.Language }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <b>Descripción</b>
+            </div>
+            <div class="col-12">
+            <p>
+              {{ movie.Plot }}
+            </p>
+          </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+
+<div class="row estrenos">
+  <div class="col-12">
+<h1>Proximos Estrenos</h1>
+</div>
+</div>
+<div class="row">
+    <div class="col-md-3 col-sm-12 " *ngFor="let movie of moviesComingSoon">
+      <mat-card (click)="goToDetails(movie)" class="movie-card card">
+        <mat-card-header>
+          <mat-card-title class="titulos">{{ movie.Title }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{ movie.Poster }}" alt="Photo of Movie" />
+        <mat-card-content>
+          <div class="row">
+            <div class="col-12">
+              <b>Géneros</b>
+            </div>
+            <div class="col-12" *ngFor="let genre of movie.Genre">
+              {{ genre }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <b>Idiomas</b>
+            </div>
+            <div class="col-12">
+              {{ movie.Language }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <b>Descripción</b>
+            </div>
+            <div class="col-12">
+            <p>
+              {{ movie.Plot }}
+            </p>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+
+
+
+
+</div>
+

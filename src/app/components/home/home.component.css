@@ -1,0 +1,29 @@
+.movie-card {
+  max-width: 400px;
+  cursor: pointer;
+}
+
+.card {
+  margin-bottom: 2%;
+  height: 725px;
+}
+
+@media (max-width: 600px) {
+  .card {
+    margin-bottom: 2%;
+    height: auto;
+  }
+}
+
+.estrenos{
+  background-color: #ff8d1b;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.titulos{
+  min-height: 56px;
+}

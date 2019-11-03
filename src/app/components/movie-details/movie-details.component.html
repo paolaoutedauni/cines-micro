@@ -1,0 +1,131 @@
+<div class="container">
+<div class="row">
+    <div class="col-12">
+  <h1>{{movie.Title}}</h1>
+</div>
+</div>
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-8">
+          <carousel>
+            <slide *ngFor="let image of movie.Images">
+              <img src="{{image}}" alt="first slide" class="imageCarousel">
+            </slide>
+          </carousel>
+        </div>
+      </div>
+     
+
+<div class="row carta">
+  <div class="col-1">
+  </div>
+  <div class="col-md-3 col-sm-12">
+    <img class="poster" src="{{ movie.Poster }}" alt="Photo of Movie" />
+  </div>
+  <div class="col-md-7 col-sm-12">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 ">
+          <mat-card class="movie-card card">
+              <div class="row">
+                  <div class="col-md-8 col-sm-12">
+                    <b>{{ movie.Title }}</b>
+                  </div>
+                  <div class="col-md-2 col-sm-12" *ngIf="movie.Available && disponible">
+                    <button mat-raised-button color="primary" (click)="reservar()"> Reservar</button>
+                  </div>
+
+                  <div class="col-md-2 col-sm-12" *ngIf="movie.Available && !disponible">
+                      <h5> Agotado</h5>
+                    </div>
+                 
+                  <div class="col-md-4 col-sm-12" *ngIf="movie.ComingSoon">
+                    <h5>Proximamente {{movie.Released}}</h5>
+                  </div>
+                 
+              </div>
+
+            <mat-card-content>
+              <div class="row">
+                <div class="col-md-2 col-sm-12">
+                  <b>Géneros</b>
+                </div>
+                <div class="col-md-2 col-sm-12" *ngFor="let genre of movie.Genre">
+                  {{ genre }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-2 col-sm-12">
+                  <b>Idiomas</b>
+                </div>
+                <div class="col-md-10 col-sm-12">
+                  {{ movie.Language }}
+                </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-2 col-sm-12">
+                    <b>Year</b>
+                  </div>
+                  <div class="col-md-10 col-sm-12">
+                    {{ movie.Year }}
+                  </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2 col-sm-12">
+                      <b>Duracion</b>
+                    </div>
+                    <div class="col-md-10 col-sm-12">
+                      {{ movie.Runtime }}
+                    </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-2 col-sm-12">
+                        <b>Director</b>
+                      </div>
+                      <div class="col-md-10 col-sm-12">
+                        {{ movie.Director }}
+                      </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12">
+                          <b>Actores</b>
+                        </div>
+                        <div class="col-md-10 col-sm-12">
+                          {{ movie.Actors }}
+                        </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-2 col-sm-12">
+                            <b>Premios</b>
+                          </div>
+                          <div class="col-md-10 col-sm-12">
+                            {{ movie.Awards }}
+                          </div>
+                        </div>
+
+              <div class="row">
+                <div class="col-md-2 col-sm-12">
+                  <b>Descripción</b>
+                </div>
+                <div class="col-md-10 col-sm-12">
+                  <p>
+                    {{ movie.Plot }}
+                  </p>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
