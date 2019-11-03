@@ -12,6 +12,7 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./components/home/home.component";
 import { MovieDetailsComponent } from "./components/movie-details/movie-details.component";
 import { HeaderComponent } from "./components/header/header.component";
+import { FooterComponent} from "./components/footer/footer.component";
 import { MaterialModule } from "./material.module";
 import { PeliculaService } from "./services/pelicula.service";
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -26,7 +27,8 @@ import { ResevarComponent } from "./components/resevar/resevar.component";
     HeaderComponent,
     MovieDetailsComponent,
     AdminComponent,
-    ResevarComponent
+    ResevarComponent,
+    FooterComponent
   ],
   imports: [
     CarouselModule.forRoot(),
