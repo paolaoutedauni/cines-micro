@@ -15,3 +15,9 @@ h1{
 .carta{
     margin-top: 10px;
 }
+
+.imageCarousel{
+    display: block; 
+    width: 100%;
+    max-height: 410px;
+}
