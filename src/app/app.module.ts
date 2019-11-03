@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { PeliculaService } from "./services/pelicula.service";
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PeliculaService } from "./services/pelicula.service";
     MovieDetailsComponent
   ],
   imports: [
+    CarouselModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
