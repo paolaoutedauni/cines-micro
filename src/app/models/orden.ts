@@ -1,7 +1,7 @@
 export class Orden {
   id: string;
   pelicula: string;
-  correo: string;
+  email: string;
   cantidad: number;
   fecha: string;
 }

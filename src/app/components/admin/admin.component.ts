@@ -22,7 +22,7 @@ export class AdminComponent implements OnInit {
         data.docs.map(doc => {
           const obj: Orden = {
             cantidad: doc.data().cantidad,
-            correo: doc.data().correo,
+            email: doc.data().email,
             fecha: doc.data().fecha,
             pelicula: doc.data().pelicula,
             id: doc.id
