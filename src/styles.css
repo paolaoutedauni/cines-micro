@@ -162,7 +162,7 @@ body a:hover {
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   color: #fff;
-  background-color: #212121;
+  background-color: #ff8d1b;
 }
 .navbar-collapse {
   padding: 0;
@@ -191,7 +191,7 @@ body a:hover {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #fff;
-  background-color: #212121;
+  background: #ff8d1b;
 }
 ul.nav.navbar-nav li.active {
   border-right: none;
