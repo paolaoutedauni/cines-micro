@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-header",
@@ -7,8 +8,10 @@ import { Component, OnInit } from "@angular/core";
 })
 export class HeaderComponent implements OnInit {
   movies: any[] = [];
-
-  constructor() {}
+  home: boolean;
+  constructor() {
+    this.home = window.location.pathname === "/home";
+  }
 
   ngOnInit() {}
 }

@@ -11,8 +11,14 @@
         >
           <nav>
             <ul class="nav navbar-nav nav-row">
-              <li><a href="/home">Cartelera</a></li>
-              <li class="active"><a href="/admin">Administrador</a></li>
+              <li [ngClass]="{ active: home }">
+                <a routerLink="/home" routerLinkActive="active">Cartelera</a>
+              </li>
+              <li [ngClass]="{ active: !home }">
+                <a routerLink="/admin" routerLinkActive="active"
+                  >Administrador</a
+                >
+              </li>
             </ul>
           </nav>
         </div>
